@@ -49,7 +49,7 @@ void predictor_work( void *args )
         // Predict next error and subtract from sampling period
         double next_error = lr.a * ( currentActualNumberOfSamples - 1 ) + lr.b;
 
-        // let it run for at least 100 iterations
+        // let it run for at least 10 iterations
         if ( currentActualNumberOfSamples > 10 )
         {
             samplingPeriod = originalSamplingPeriod + next_error;
