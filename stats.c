@@ -16,15 +16,16 @@ double stats_mean(double *array, unsigned int n)
 
 double stats_median(double *array, unsigned int n)
 {
+    int n_half = n>>1;
     if( n%2 == 0 )
     {
         // if there is an even number of elements, return mean of the two elements in the middle
-        return ( array[n/2] + array[n/2-1] ) / 2.0;
+        return stats_mean( &array[n_half - 1], 2 );
     }
     else
     {
         // else return the element in the middle
-        return array[n/2];
+        return array[n_half];
     }
 }
 
